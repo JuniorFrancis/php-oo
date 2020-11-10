@@ -9,7 +9,8 @@ class Cliente
 
    public function Comprar()
    {
-      echo "O cliente realizou uma compra!";
+      echo "O {$this->nome} realizou uma compra!<br>";
    }
+   
 }
 
