@@ -12,5 +12,9 @@ class Cliente
       echo "O {$this->nome} realizou uma compra!<br>";
    }
    
+
+
+
+
 }
 
