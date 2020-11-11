@@ -5,11 +5,11 @@ class Fornecedor
     //Constantes não se usa o "$" para se iniciar
     public const PAIS = "Brasil";
 
-    public $razaoSocial;
-    public $nomeFantasia;
-    public $cnpj;
+    public string $razaoSocial;
+    public string $nomeFantasia;
+    public string $cnpj;
 
-    function autorizar($usuario)
+    function autorizar(object $usuario): void
     {
         if($usuario->nome == "joao" && $usuario->senha == "123456"){
             echo "Login autorizado";
