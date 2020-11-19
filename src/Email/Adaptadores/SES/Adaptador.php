@@ -1,6 +1,6 @@
 <?php
 
-namespace Email\Adaptadores\SES;
+namespace App\Email\Adaptadores\SES;
 
 class Adaptador
 {
