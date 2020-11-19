@@ -1,6 +1,8 @@
 <?php 
 
-class Cliente 
+namespace App\Classes;
+
+class Clientes 
 {
    public string $nome;
    public int $idade;

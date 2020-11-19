@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Classes;
+
 class Fornecedor
 {
     //Constantes não se usa o "$" para se iniciar
