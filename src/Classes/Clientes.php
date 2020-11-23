@@ -18,14 +18,14 @@ class Clientes
    }
    /*A função GET__ é utlizada como tratamento para quando chamamos alguma propriedade
    em que ainda não foi instanciada*/
-   public function __get(string $nomePropriedade)
+   public function __get(string $nomePropriedade): string
    {
       return "A propriedade não existe";
    }
 
    /*O Método "__SET" nos permite criar propriedades de cclasses dinamicamente, e as mesmas só 
    aparecerão caso frem tratadas (if, else).*/
-   public function __set(string $nomePropriedade, $valorPropriedade)
+   public function __set(string $nomePropriedade, $valorPropriedade): void
    {
       if ($nomePropriedade === 'cpf')
       {
@@ -38,13 +38,32 @@ class Clientes
 
    }
 
-   public function __call(string $nomeMetodo, array $argumentoMetodo)
+   /*O Função "__CALL" é utilizada quando usandos um método não instanciado normalmente. 
+   Mais precisamente, é quando utlizando ele de forma "DINÂMICA" (criado diretamente 
+   no instanciamento da classe)*/
+   public function __call(string $nomeMetodo, array $argumentoMetodo): void
    {
       if ($nomeMetodo === 'alterar')
       {
          $this->nome = $argumentoMetodo[0];
          $this->idade = $argumentoMetodo[1];
       }
+   }
+
+   /*Função que me permite selecionar o que virá da "SERIALIZAÇÃO" do objeto*/
+   public function __sleep() : array
+   {
+      return ["nome", "idade"];
+   }
+
+   public function __wakeup() : void
+   {
+      $this->tipo = "serializado";
+   }
+
+   public function __tostring() : string 
+   {
+      return $this->nome . ", " . $this->idade;
    }
 
    public function Comprar(): void

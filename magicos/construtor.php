@@ -9,5 +9,12 @@ $cli->rg = "11.111.111.1";
 //echo $cli->cidade;
 
 $cli->alterar('Junior Francis', 20);
+$cliSerializado = serialize($cli);
 
-var_dump($cli);
+echo "<br>" . $cliSerializado;
+
+echo "<br>" . $cli;
+
+$cli2 = unserialize($cliSerializado);
+
+var_dump($cli, $cli2);
