@@ -1,6 +1,6 @@
 <?php
 
-namespace Email\Adaptadores\Mailgun;
+namespace App\Email\Adaptadores\Mailgun;
 
 class Adaptador
 {
